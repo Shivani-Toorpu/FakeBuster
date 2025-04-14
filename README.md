@@ -45,7 +45,7 @@ This application validates news headlines using the Llama-4 model from Groq, Bra
 Run the Streamlit application:
 
 ```bash
-streamlit run app.py
+streamlit run news_validator.py
 ```
 
 Open your web browser and navigate to the local URL provided by Streamlit (usually `http://localhost:8501`). Enter a news headline in the input field and click "Validate" to start the analysis.
