@@ -1,14 +1,19 @@
-# Fake News Validator
+# FakeBuster
 
-This application validates news headlines using the Llama-4 model from Groq, Brave Search API, and Selenium web scraping. It uses function calling to search for relevant news sources and analyze their content to determine the veracity of a given headline.
+**Multilingual LLM-Based System for Real-Time Automated Verification of News Claims**
+
+FakeBuster validates news headlines using Llama models via Groq, and the Tavily Search API. It uses native tool calling to search for relevant real-time news sources and analyzes their content to determine the veracity of a given headline. It supports multilingual claims in English, Hindi, Telugu, and Tamil.
 
 ## Features
 
--   News headline validation.
--   Integration with Groq's Llama-4 for analysis.
--   Brave Search API for finding relevant news articles.
--   Selenium for web scraping article content.
--   Streamlit interface for user interaction.
+-   **News Headline Validation**: Checks claims and outputs a verdict (TRUE, FALSE, PARTIALLY TRUE, INSUFFICIENT INFORMATION).
+-   **Integration with Groq**: Uses Llama models for incredibly fast inference and analysis.
+-   **Native Tool Calling**: Dynamically calls the Tavily Search API to pull up-to-date sources.
+-   **Multilingual Support**: Detects input language (English, Hindi, Telugu, Tamil) and responds in the same language.
+-   **Chain-of-Thought Reasoning**: Uses structured internal reasoning for higher accuracy verdicts.
+-   **Dynamic Search Depth**: Choose between "Quick Search" and "Deep Dive" modes.
+-   **Real-time Streaming**: Streams the AI's analysis directly to the UI.
+-   **Streamlit Interface**: Clean, newspaper-inspired minimalist frontend.
 
 ## Installation
 
@@ -36,16 +41,15 @@ This application validates news headlines using the Llama-4 model from Groq, Bra
     Create a `.env` file in the root directory and add your API keys:
     ```env
     GROQ_API_KEY="YOUR_GROQ_API_KEY"
-    BRAVE_API_KEY="YOUR_BRAVE_API_KEY"
+    TAVILY_API_KEY="YOUR_TAVILY_API_KEY"
     ```
-    You will also need to ensure you have a compatible WebDriver (like ChromeDriver) installed and its path accessible or configured if needed by Selenium.
 
 ## Usage
 
 Run the Streamlit application:
 
 ```bash
-streamlit run app.py
+streamlit run news_validator.py
 ```
 
-Open your web browser and navigate to the local URL provided by Streamlit (usually `http://localhost:8501`). Enter a news headline in the input field and click "Validate" to start the analysis.
+Open your web browser and navigate to the local URL provided by Streamlit (usually `http://localhost:8501`). Enter a news headline in the input field, configure your Search Depth, and click "Verify This Claim" to start the analysis.

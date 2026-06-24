@@ -1,0 +1,292 @@
+/* ============================================================
+   FakeBuster — Newspaper-Inspired Minimalist Stylesheet
+   ============================================================ */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* --- Root Variables --- */
+:root {
+    --color-bg: #FAFAF8;
+    --color-text: #1A1A1A;
+    --color-text-secondary: #555555;
+    --color-text-muted: #888888;
+    --color-border: #1A1A1A;
+    --color-border-light: #D4D4D4;
+    --color-white: #FFFFFF;
+
+    --color-verdict-true: #2D6A4F;
+    --color-verdict-false: #9B2226;
+    --color-verdict-partial: #B8860B;
+    --color-verdict-insufficient: #6B7280;
+
+    --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-body: 'Source Serif 4', 'Georgia', serif;
+    --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* --- Global Overrides --- */
+.stApp {
+    background-color: var(--color-bg) !important;
+    color: var(--color-text) !important;
+}
+
+header[data-testid="stHeader"] {
+    background-color: var(--color-bg) !important;
+}
+
+/* Adjust main content top padding to align with sidebar */
+.block-container {
+    padding-top: 3rem !important;
+}
+
+/* ============================================================
+   EXCEPTIONS (Masthead, Tagline, Monogram)
+   ============================================================ */
+.masthead {
+    font-family: var(--font-display) !important;
+    font-weight: 800;
+    font-size: 5rem !important;
+    color: var(--color-text) !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+}
+
+.masthead-rule {
+    border: none;
+    border-top: 3px solid var(--color-border);
+    margin: 0.3rem 0 0.15rem 0;
+}
+
+.masthead-rule-thin {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 0 0 0.6rem 0;
+}
+
+.tagline {
+    font-family: var(--font-display) !important;
+    font-weight: 400 !important;
+    font-size: 1.1rem !important;
+    color: var(--color-text-secondary) !important;
+    letter-spacing: 0.02em;
+    font-style: italic;
+    text-align: center;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+}
+
+.sidebar-monogram {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--color-text);
+    letter-spacing: -0.04em;
+    border: 2px solid var(--color-border);
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+/* ============================================================
+   STANDARDIZED SIZES
+   ============================================================ */
+
+/* --- 1. HEADERS (1.1rem, 700, Display Font) --- */
+.section-header, 
+.analysis-label, 
+.sources-header, 
+.sidebar-heading {
+    font-family: var(--font-display) !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    color: var(--color-text) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+}
+
+.section-header {
+    margin: 1.5rem 0 0.6rem 0;
+    padding: 0;
+}
+.analysis-label {
+    margin: 1rem 0 0.5rem 0;
+}
+.sources-header {
+    margin: 1.5rem 0 0.5rem 0;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--color-border-light);
+}
+.sidebar-heading {
+    margin: 1rem 0 0.4rem 0;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+/* --- 2. BODY TEXT (0.9rem, 400, Body Font) --- */
+.sidebar-body, 
+.sidebar-steps, 
+.stTextArea textarea {
+    font-family: var(--font-body) !important;
+    font-weight: 400 !important;
+    font-size: 0.9rem !important;
+    color: var(--color-text-secondary) !important;
+    line-height: 1.65 !important;
+}
+
+.stTextArea textarea {
+    border: 1px solid var(--color-border-light) !important;
+    border-radius: 0 !important;
+    background-color: var(--color-white) !important;
+    color: var(--color-text) !important;
+}
+
+.stTextArea textarea:focus {
+    border-color: var(--color-border) !important;
+    box-shadow: none !important;
+}
+
+/* --- 3. UI ELEMENTS (0.85rem, 500, UI Font) --- */
+.stTextArea label, 
+.stSelectbox label, 
+.stSelectbox > div > div, 
+button[kind="primary"], 
+button[kind="secondary"], 
+.status-box, 
+.error-box,
+.footer {
+    font-family: var(--font-ui) !important;
+    font-weight: 500 !important;
+    font-size: 0.85rem !important;
+}
+
+.stTextArea label, 
+.stSelectbox label {
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: var(--color-text-secondary) !important;
+}
+
+.stSelectbox > div > div {
+    border-radius: 0 !important;
+    border-color: var(--color-border-light) !important;
+}
+
+button[kind="primary"], 
+button[kind="secondary"] {
+    border-radius: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    transition: all 0.2s ease !important;
+    width: 100% !important;
+}
+
+button[kind="primary"] {
+    background-color: var(--color-text) !important;
+    color: var(--color-white) !important;
+    border: 1px solid var(--color-text) !important;
+}
+
+button[kind="primary"]:hover {
+    background-color: var(--color-white) !important;
+    color: var(--color-text) !important;
+}
+
+button[kind="secondary"] {
+    background-color: var(--color-white) !important;
+    color: var(--color-text) !important;
+    border: 1px solid var(--color-border-light) !important;
+}
+
+button[kind="secondary"]:hover {
+    background-color: var(--color-text) !important;
+    color: var(--color-white) !important;
+    border-color: var(--color-text) !important;
+}
+
+.status-box, .error-box {
+    background-color: var(--color-bg) !important;
+    border: 1px solid var(--color-border-light) !important;
+    padding: 1rem !important;
+    margin: 0.5rem 0 1rem 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: var(--color-text) !important;
+}
+
+.error-box {
+    color: var(--color-verdict-false) !important;
+    background-color: #FDF2F2 !important;
+    border-color: var(--color-verdict-false) !important;
+}
+
+.footer {
+    color: var(--color-text-muted) !important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border-light);
+}
+
+/* --- 4. VERDICT BANNER (1.5rem, 700, Display Font) --- */
+.verdict-banner {
+    font-family: var(--font-display) !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    padding: 0.8rem 0;
+    margin: 0.5rem 0;
+    border-top: 2px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.verdict-true { color: var(--color-verdict-true); }
+.verdict-false { color: var(--color-verdict-false); }
+.verdict-partial { color: var(--color-verdict-partial); }
+.verdict-insufficient { color: var(--color-verdict-insufficient); }
+
+/* ============================================================
+   MISC UTILITIES
+   ============================================================ */
+.section-rule {
+    border: none;
+    border-top: 1px solid var(--color-border-light);
+    margin: 0 0 1rem 0;
+}
+
+.stSpinner {
+    font-family: var(--font-ui) !important;
+}
+
+.stProgress > div > div > div > div {
+    background-color: var(--color-text) !important;
+}
+
+.stAlert {
+    border-radius: 0 !important;
+    font-family: var(--font-ui) !important;
+}
+
+.stApp hr {
+    border: none;
+    border-top: 1px solid var(--color-border-light);
+    margin: 1.5rem 0;
+}
+
+.stApp a {
+    color: var(--color-text) !important;
+    text-decoration: underline !important;
+    text-decoration-color: var(--color-border-light) !important;
+    text-underline-offset: 3px !important;
+}
+
+.stApp a:hover {
+    text-decoration-color: var(--color-text) !important;
+}

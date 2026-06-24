@@ -1,0 +1,89 @@
+<!-- ============================================================
+     FakeBuster — HTML Templates
+     Each <template> block is loaded by ID in news_validator.py
+     Use {placeholder} syntax for dynamic values.
+     ============================================================ -->
+
+<!-- Sidebar -->
+<template id="sidebar-monogram">
+    <div class="sidebar-monogram">FB</div>
+</template>
+
+<template id="sidebar-about-heading">
+    <div class="sidebar-heading">About</div>
+</template>
+
+<template id="sidebar-about-body">
+    <div class="sidebar-body">
+        FakeBuster uses Llama-4 to analyze news headlines and determine
+        whether they are real or fabricated. It searches the web for relevant
+        information and provides sources to support its analysis.
+    </div>
+</template>
+
+<template id="sidebar-how-heading">
+    <div class="sidebar-heading">How It Works</div>
+</template>
+
+<template id="sidebar-how-body">
+    <div class="sidebar-steps">
+        1. Enter a news headline or claim<br>
+        2. AI searches for information via Tavily<br>
+        3. Sources are cross-referenced by Llama-4<br>
+        4. A verdict is streamed with citations
+    </div>
+</template>
+
+<!-- Masthead -->
+<template id="masthead">
+    <h1 class="masthead">FakeBuster</h1>
+</template>
+
+<template id="masthead-rule">
+    <hr class="masthead-rule">
+</template>
+
+<template id="masthead-rule-thin">
+    <hr class="masthead-rule-thin">
+</template>
+
+<template id="tagline">
+    <p class="tagline">Multilingual LLM-Based System for Real-Time Automated Verification of News Claims</p>
+</template>
+
+<!-- Section Headers -->
+<template id="section-header-examples">
+    <div class="section-header">Example Claims</div>
+</template>
+
+<template id="section-rule">
+    <hr class="section-rule">
+</template>
+
+<!-- Verdict — use {css_class} and {verdict_value} placeholders -->
+<template id="verdict-banner">
+    <div class="verdict-banner {css_class}">Verdict: {verdict_value}</div>
+</template>
+
+<template id="analysis-label">
+    <div class="analysis-label">Analysis</div>
+</template>
+
+<!-- Sources -->
+<template id="sources-header">
+    <div class="sources-header">Sources</div>
+</template>
+
+<!-- Status Boxes -->
+<template id="status-box">
+    <div class="status-box">{message}</div>
+</template>
+
+<template id="error-box">
+    <div class="error-box">{message}</div>
+</template>
+
+<!-- Footer -->
+<template id="footer">
+    <div class="footer">FakeBuster &mdash; Powered by Llama-4, Groq &amp; Tavily &mdash; 2026</div>
+</template>
